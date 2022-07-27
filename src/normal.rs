@@ -1,4 +1,4 @@
-use std::{sync::mpsc, thread, time::Duration};
+use std::{sync::mpsc, thread};
 
 use crossbeam_channel::bounded;
 
@@ -11,7 +11,6 @@ pub fn proc() {
     // generator thread
     thread::spawn(move || {
         for i in 0..20 {
-            thread::sleep(Duration::from_millis(100));
             out_tx.send(i).unwrap();
         }
     });

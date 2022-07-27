@@ -1,4 +1,4 @@
-use std::{sync::mpsc, thread, time::Duration};
+use std::{sync::mpsc, thread};
 
 use crossbeam_channel::{bounded, Receiver, Sender};
 
@@ -20,7 +20,6 @@ pub fn proc() {
     // generator thread
     thread::spawn(move || {
         for i in 0..20 {
-            thread::sleep(Duration::from_millis(100));
             let (tx, rx) = bounded::<String>(0);
             out_tx.send(ChanChanTx { payload: i, tx }).unwrap();
             in_tx.send(ChanChanRx { rx }).unwrap();
