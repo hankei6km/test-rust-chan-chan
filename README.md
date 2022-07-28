@@ -1,3 +1,3 @@
-# Rust でも channel channel
+# Rust でも chan cahn
 
-詳細については記事を作成中。
+詳細は「[Rust でも chan chan](https://zenn.dev/hankei6km/articles/channel-channel-in-rust)」を参照してください。
